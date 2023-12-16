@@ -20,6 +20,27 @@ const Newsletter = () => {
               </div>
             ))}
           </div>
+          <form>
+            <div className="mb-4">
+              <div className="flex justify-between items-center text-xs mb-2">
+                <label htmlFor="email" className="text-dark-slate-grey font-semibold">
+                  Email address
+                </label>
+                <label className="text-tomato font-semibold">Valid email required</label>
+              </div>
+              <input
+                type="email"
+                id="email"
+                placeholder="email@company.com"
+                className="w-full border border-grey p-2 rounded-md focus:outline-none focus:border-dark-slate-grey focus:ring-0 focus:ring-dark-slate-grey"
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full py-3 bg-dark-slate-grey text-white rounded-md text-sm font-semibold transition-colors duration-300 hover:bg-gradient-to-r from-tomato to-orange-hover">
+              Subscribe to monthly newsletter
+            </button>
+          </form>
         </div>
       </section>
     </div>
