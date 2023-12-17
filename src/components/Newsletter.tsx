@@ -2,6 +2,7 @@ import illustrationMobile from "./../assets/illustration-sign-up-mobile.svg";
 import illustrationDesktop from "./../assets/illustration-sign-up-desktop.svg";
 import iconList from "./../assets/icon-list.svg";
 import { useFormik } from "formik";
+import * as yup from "yup";
 
 const Newsletter = () => {
   const newsletterBenefit = ["Product discovery and building what matters", "Measuring to ensure updates are a success", "And much more!"];
@@ -9,6 +10,9 @@ const Newsletter = () => {
     initialValues: {
       email: "",
     },
+    validationSchema: yup.object({
+      email: yup.string().email("Valid email required").required("Valid email required"),
+    }),
     onSubmit: (values) => {
       console.log("form", values);
     },
