@@ -46,7 +46,7 @@ const Newsletter = () => {
                 <label htmlFor="email" className="text-dark-slate-grey font-semibold">
                   Email address
                 </label>
-                <label className="text-tomato font-semibold">Valid email required</label>
+                <label className="text-tomato font-semibold">{formik.errors.email}</label>
               </div>
               <input
                 type="email"
