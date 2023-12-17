@@ -1,9 +1,18 @@
 import illustrationMobile from "./../assets/illustration-sign-up-mobile.svg";
 import illustrationDesktop from "./../assets/illustration-sign-up-desktop.svg";
 import iconList from "./../assets/icon-list.svg";
+import { useFormik } from "formik";
 
 const Newsletter = () => {
   const newsletterBenefit = ["Product discovery and building what matters", "Measuring to ensure updates are a success", "And much more!"];
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+    },
+    onSubmit: (values) => {
+      console.log("form", values);
+    },
+  });
   return (
     <div className="h-screen grid place-items-center">
       <section className="flex flex-col sm:flex-row-reverse w-full sm:w-[80%] md:w-[80%] lg:w-[50%] bg-white rounded-lg sm:round sm:p-4">
