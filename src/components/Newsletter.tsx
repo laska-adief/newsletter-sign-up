@@ -13,6 +13,11 @@ const Newsletter = () => {
       console.log("form", values);
     },
   });
+
+  const handleForm = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { target } = event;
+    formik.setFieldValue(target.name, target.value);
+  };
   return (
     <div className="h-screen grid place-items-center">
       <section className="flex flex-col sm:flex-row-reverse w-full sm:w-[80%] md:w-[80%] lg:w-[50%] bg-white rounded-lg sm:round sm:p-4">
@@ -42,8 +47,10 @@ const Newsletter = () => {
               <input
                 type="email"
                 id="email"
+                name="email"
                 placeholder="email@company.com"
                 className="w-full border border-grey p-2 rounded-md focus:outline-none focus:border-dark-slate-grey focus:ring-0 focus:ring-dark-slate-grey"
+                onChange={handleForm}
               />
             </div>
             <button
