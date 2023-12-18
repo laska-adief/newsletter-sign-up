@@ -40,7 +40,7 @@ const Newsletter = () => {
               </div>
             ))}
           </div>
-          <form>
+          <form onSubmit={formik.handleSubmit}>
             <div className="mb-4">
               <div className="flex justify-between items-center text-xs mb-2">
                 <label htmlFor="email" className="text-dark-slate-grey font-semibold">
