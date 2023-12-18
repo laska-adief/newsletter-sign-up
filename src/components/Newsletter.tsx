@@ -3,6 +3,7 @@ import illustrationDesktop from "./../assets/illustration-sign-up-desktop.svg";
 import iconList from "./../assets/icon-list.svg";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import SuccessSubscribe from "./SuccessSubscribe";
 
 const Newsletter = () => {
   const newsletterBenefit = ["Product discovery and building what matters", "Measuring to ensure updates are a success", "And much more!"];
@@ -65,6 +66,7 @@ const Newsletter = () => {
           </form>
         </div>
       </section>
+      <SuccessSubscribe />
     </div>
   );
 };
