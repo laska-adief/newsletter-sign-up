@@ -26,6 +26,10 @@ const Newsletter = () => {
     const { target } = event;
     formik.setFieldValue(target.name, target.value);
   };
+
+  const handleClosePopup = () => {
+    setIsShowPopup(false);
+  };
   return (
     <div className="h-screen grid place-items-center">
       <section className="flex flex-col sm:flex-row-reverse w-full sm:w-[80%] md:w-[80%] lg:w-[50%] bg-white rounded-lg sm:round sm:p-4">
@@ -69,7 +73,7 @@ const Newsletter = () => {
           </form>
         </div>
       </section>
-      {isShowPopup && <SuccessSubscribe />}
+      {isShowPopup && <SuccessSubscribe closePopUp={handleClosePopup} />}
     </div>
   );
 };
