@@ -4,9 +4,11 @@ import iconList from "./../assets/icon-list.svg";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import SuccessSubscribe from "./SuccessSubscribe";
+import { useState } from "react";
 
 const Newsletter = () => {
   const newsletterBenefit = ["Product discovery and building what matters", "Measuring to ensure updates are a success", "And much more!"];
+  const [isShowPopup, setIsShowPopup] = useState(false);
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -16,6 +18,7 @@ const Newsletter = () => {
     }),
     onSubmit: (values) => {
       console.log("form", values);
+      setIsShowPopup(true);
     },
   });
 
@@ -66,7 +69,7 @@ const Newsletter = () => {
           </form>
         </div>
       </section>
-      <SuccessSubscribe />
+      {isShowPopup && <SuccessSubscribe />}
     </div>
   );
 };
