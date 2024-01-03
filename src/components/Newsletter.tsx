@@ -18,6 +18,9 @@ const Newsletter = () => {
     }),
     onSubmit: (values) => {
       console.log("form", values);
+      formik.resetForm({
+        values: { email: "" },
+      });
       setIsShowPopup(true);
     },
   });
@@ -62,6 +65,7 @@ const Newsletter = () => {
                 name="email"
                 placeholder="email@company.com"
                 className="w-full border border-grey p-2 rounded-md focus:outline-none focus:border-dark-slate-grey focus:ring-0 focus:ring-dark-slate-grey"
+                value={formik.values.email}
                 onChange={handleForm}
               />
             </div>
